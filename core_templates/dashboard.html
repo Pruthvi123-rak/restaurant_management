@@ -1,0 +1,29 @@
+<h1>🍽️ Restaurant Dashboard</h1>
+
+<h2>Menu Items</h2>
+<ul>
+    {% for item in menu %}
+        <li>{{ item.name }} - ${{ item.price }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Orders</h2>
+<ul>
+    {% for order in orders %}
+        <li>Order #{{ order.id }} - Table {{ order.table.number }} - Total: ${{ order.total }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Reservations</h2>
+<ul>
+    {% for res in reservations %}
+        <li>{{ res.name }} - Table {{ res.table.number }} at {{ res.date }} {{ res.time }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Inventory</h2>
+<ul>
+    {% for item in inventory %}
+        <li>{{ item.name }} - {{ item.quantity }}</li>
+    {% endfor %}
+</ul>
